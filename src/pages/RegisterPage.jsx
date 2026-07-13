@@ -55,17 +55,20 @@ export default function RegisterPage() {
     setLoading(true);
     try {
       // 'localhost' ऐवजी अचूक IP पत्ता '127.0.0.1' वापरला आहे
-      const response = await fetch("http://127.0.0.1:5000/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://product-management-backend-ibmd.onrender.com/api/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name.trim(),
+            email: email.trim(),
+            password,
+          }),
         },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          password,
-        }),
-      });
+      );
 
       const data = await response.json();
 

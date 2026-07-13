@@ -102,7 +102,7 @@ export default function ProductsPage() {
                   <div className="flex justify-center">
                     {item.image ? (
                       <img
-                        src={`http://127.0.0.1:5000/${item.image}`}
+                        src={`https://product-management-backend-ibmd.onrender.com/${item.image}`}
                         alt={item.name}
                         className="h-12 w-12 rounded-2xl object-cover border border-violet-200 shadow-sm"
                         onError={(e) => {

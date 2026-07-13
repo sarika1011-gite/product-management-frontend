@@ -77,7 +77,7 @@ export default function ProductsPage() {
       ) : (
         <div className="bg-white rounded-[30px] border border-violet-50 shadow-xl overflow-hidden p-6">
           {/* Header Row */}
-          <div className="grid grid-cols-6 gap-4 border-b border-violet-100 pb-4 mb-4 text-center font-bold text-xs uppercase tracking-wider text-violet-600">
+          <div className="hidden md:grid grid-cols-6 gap-4 border-b border-violet-100 pb-4 mb-4 text-center font-bold text-xs uppercase tracking-wider text-violet-600">
             <div>Photo</div>
             <div>Product Name</div>
             <div>Category</div>
@@ -96,7 +96,7 @@ export default function ProductsPage() {
               products.map((item) => (
                 <div
                   key={item._id || item.id}
-                  className="grid grid-cols-6 gap-4 py-4 items-center text-center text-sm text-slate-600 hover:bg-violet-50/20 transition rounded-xl px-2"
+                  className="grid grid-cols-2 md:grid-cols-6 gap-4 py-4 items-center text-center text-sm text-slate-600 hover:bg-violet-50/20 transition rounded-xl px-2"
                 >
                   {/* Image */}
                   <div className="flex justify-center">
@@ -133,7 +133,7 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Actions Column: Status Badge AND Delete Button Side by Side */}
-                  <div className="flex items-center justify-center gap-3">
+                  <div className="flex flex-wrap items-center justify-center gap-2">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-bold ${
                         item.status === "Inactive"
